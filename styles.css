@@ -1,0 +1,367 @@
+/* ==========================================================================
+   Marshal Medico - Simple Coming Soon & Contact Details (Single Section)
+   ========================================================================== */
+
+:root {
+  --color-primary: #841b27;         /* Deep burgundy / crimson */
+  --color-primary-dark: #63121c;
+  --color-accent-blue: #0077b6;     /* Medical vibrant blue */
+  --color-accent-blue-light: #e0f2fe;
+  --color-rep: #3b526d;             /* Slate navy for Kulveer Singh Khalsa */
+  
+  --bg-page: #f1f5f9;
+  --bg-card: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-subtle: #64748b;
+  --border-color: #e2e8f0;
+  
+  --shadow-card: 0 20px 45px -10px rgba(0, 0, 0, 0.12), 0 8px 16px -4px rgba(0, 0, 0, 0.04);
+  --radius-card: 1.25rem;
+  --radius-btn: 0.625rem;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+  color: var(--text-main);
+  background-color: var(--bg-page);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-block-size: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: clamp(1.5rem, 4vw, 3rem);
+  padding-inline: clamp(1rem, 3vw, 2rem);
+  background: radial-gradient(circle at 80% 15%, #fce7e9, transparent 40%),
+              radial-gradient(circle at 15% 85%, #e0f2fe, transparent 45%),
+              #f8fafc;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   Single Section Layout Card
+   -------------------------------------------------------------------------- */
+.page-container {
+  inline-size: 100%;
+  max-inline-size: 890px;
+  margin-inline: auto;
+}
+
+.coming-soon-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-card);
+  padding: clamp(1.75rem, 5vw, 3.25rem);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top Accent Bar */
+.coming-soon-card::before {
+  content: '';
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline: 0;
+  block-size: 6px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent-blue));
+}
+
+/* Representative Name & Status */
+.card-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.rep-name {
+  font-size: clamp(1.4rem, 2.8vw, 1.85rem);
+  font-weight: 700;
+  color: var(--color-rep);
+  letter-spacing: -0.01em;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding-block: 0.35rem;
+  padding-inline: 0.85rem;
+  background-color: #fef2f2;
+  color: var(--color-primary);
+  border: 1px solid #fecaca;
+  border-radius: 9999px;
+}
+
+.pulse-dot {
+  inline-size: 8px;
+  block-size: 8px;
+  background-color: #ef4444;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  70% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+/* Divider Line */
+.divider-wrapper {
+  inline-size: 100%;
+  block-size: 2px;
+  background-color: #f1f5f9;
+}
+
+.divider-line {
+  inline-size: 100%;
+  block-size: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent-blue), transparent);
+}
+
+/* Brand Identity */
+.brand-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.brand-logo {
+  inline-size: clamp(68px, 12vw, 90px);
+  block-size: auto;
+  flex-shrink: 0;
+}
+
+.brand-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 900;
+  color: var(--color-primary);
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+}
+
+.brand-tagline {
+  font-size: clamp(0.78rem, 1.5vw, 0.95rem);
+  font-weight: 700;
+  color: var(--color-accent-blue);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-block-start: 0.35rem;
+}
+
+/* Big Coming Soon Banner */
+.coming-soon-banner {
+  background: linear-gradient(135deg, #fdf2f3 0%, #ffffff 100%);
+  border: 1px solid #fce7e9;
+  border-radius: 0.85rem;
+  padding-block: 1.25rem;
+  padding-inline: 1.5rem;
+}
+
+.coming-soon-banner h2 {
+  font-size: clamp(1.4rem, 3.2vw, 2rem);
+  font-weight: 900;
+  color: var(--color-primary);
+  letter-spacing: 0.08em;
+  margin-block-end: 0.35rem;
+}
+
+.coming-soon-banner p {
+  font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Contact Details */
+.contact-details-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  background-color: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: 0.85rem;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contact-icon {
+  inline-size: 38px;
+  block-size: 38px;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.contact-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-subtle);
+}
+
+.contact-value {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-weight: 600;
+  color: var(--text-main);
+  margin-block-start: 0.15rem;
+  line-height: 1.45;
+}
+
+.contact-value a {
+  color: var(--color-primary);
+  transition: color 0.15s ease;
+}
+
+.contact-value a:hover {
+  color: var(--color-accent-blue);
+  text-decoration: underline;
+}
+
+/* Action Buttons (All 4 in One Line) */
+.actions-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.65rem;
+}
+
+@media (max-width: 620px) {
+  .actions-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding-block: 0.8rem;
+  padding-inline: 0.5rem;
+  border-radius: var(--radius-btn);
+  font-size: clamp(0.78rem, 1.05vw, 0.92rem);
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--color-accent-blue);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.btn-whatsapp {
+  background-color: #25d366;
+  color: #ffffff;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ea952;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: var(--text-main);
+  border-color: var(--border-color);
+}
+
+.btn-secondary:hover {
+  background-color: #f1f5f9;
+  border-color: var(--text-subtle);
+  transform: translateY(-1px);
+}
+
+/* Footer note */
+.card-footer-note {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-subtle);
+  padding-block-start: 0.5rem;
+  border-block-start: 1px dashed var(--border-color);
+}
+
+/* Toast */
+.toast-msg {
+  position: fixed;
+  inset-block-end: 2rem;
+  inset-inline-start: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background-color: #0f172a;
+  color: #ffffff;
+  padding: 0.65rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toast-msg.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

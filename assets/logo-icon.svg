@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <!-- Circle Border -->
+  <circle cx="100" cy="100" r="90" fill="#ffffff" stroke="#841b27" stroke-width="8" />
+  
+  <!-- Stylized Double M Monogram in Medical Blue -->
+  <g fill="none" stroke="#0077b6" stroke-width="13" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Top-left M -->
+    <path d="M 52 108 L 64 68 L 78 92 L 92 68 L 104 108" />
+    <!-- Bottom-right M (shifted down and right, matching card) -->
+    <path d="M 96 142 L 108 102 L 122 126 L 136 102 L 148 142" />
+  </g>
+</svg>
